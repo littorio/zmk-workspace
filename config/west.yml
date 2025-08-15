@@ -26,7 +26,7 @@ manifest:
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: weirdo
+    - name: littorio
       url-base: https://github.com/littorio
 
   projects:
@@ -46,7 +46,7 @@ manifest:
     - name: zmk-tri-state
       path: modules/zmk/tri-state
     - name: zmk-keyboard-tcherta
-      remote: weirdo
+      remote: littorio
       revision: main
       path: modules/zmk/zmk-keyboard-tcherta
 
