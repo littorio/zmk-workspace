@@ -14,8 +14,14 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: tester_pro_micro
+    shield: plenka_left
+  - board: nice_nano_v2
+    shield: plenka_right
   - board: nice_nano_v2
     shield: settings_reset
+  - board: nice_nano_v2
+    shield: tester_pro_micro
   - board: tcherta_left
+    shield: nice_view nice_view_adapter
   - board: tcherta_right
+    shield: nice_view nice_view_adapter
