@@ -21,7 +21,12 @@ include:
     shield: settings_reset
   - board: nice_nano_v2
     shield: tester_pro_micro
-  - board: tcherta_left
-    shield: nice_view nice_view_adapter
-  - board: tcherta_right
-    shield: nice_view nice_view_adapter
+  - board: nice_nano_v2
+    shield: tcherta_left
+  - board: nice_nano_v2
+    shield: tcherta_right
+
+#  - board: tcherta_left
+#    shield: nice_view nice_view_adapter
+#  - board: tcherta_right
+#    shield: nice_view nice_view_adapter

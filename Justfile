@@ -6,6 +6,8 @@ build := absolute_path('.build')
 out := absolute_path('firmware')
 draw := absolute_path('draw')
 
+import 'modules/zmk/zmk-orbita-layout/just/seal.just'
+
 # parse build.yaml and filter targets by expression
 _parse_targets $expr:
     #!/usr/bin/env bash
