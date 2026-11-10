@@ -47,8 +47,12 @@ manifest:
       path: modules/zmk/tri-state
     - name: zmk-keyboard-tcherta
       remote: littorio
-      revision: main
+      revision: tcherta_shield_0
       path: modules/zmk/zmk-keyboard-tcherta
+    - name: zmk-orbita-layout
+      remote: littorio
+      revision: main
+      path: modules/zmk/zmk-orbita-layout
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.

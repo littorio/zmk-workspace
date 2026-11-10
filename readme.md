@@ -1,3 +1,9 @@
+# ZMK Workspace
+
+This workspace includes the inherited urob configuration below and local
+Tcherta/Orbita extensions. See [WORKSPACE.md](WORKSPACE.md) for the current
+module topology, supported keyboards, build targets, and sealing workflow.
+
 # urob's zmk-config
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
