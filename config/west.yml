@@ -47,6 +47,8 @@ manifest:
       path: modules/zmk/tri-state
     - name: zmk-keyboard-tcherta
       remote: littorio
+      # Default keyboard for west update and CI. For Plenka use plenka_1.
+      # Local git switch selects the keyboard without updating other projects.
       revision: tcherta_shield_0
       path: modules/zmk/zmk-keyboard-tcherta
     - name: zmk-orbita-layout

@@ -5,11 +5,14 @@ on:
     paths:
       - config/**
       - build.yaml
+      - build-ci.yaml
+      - .github/workflows/build-nix.yml
 
 jobs:
   build:
     uses: urob/zmk-actions/.github/workflows/build-user-config.yml@main
     with:
+      build_matrix_path: build-ci.yaml
       # Set to 'gnuarmemb' 'zephyr' or 'zephyr-full' (from fastest to
       # most compatible). ZMK Studio requires 'zephyr-full'.
       toolchain: zephyr

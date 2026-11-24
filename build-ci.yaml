@@ -1,0 +1,12 @@
+# CI checks out the keyboard revision in config/west.yml (Tcherta by default).
+# Keep this matrix aligned with that revision. build.yaml is the local catalog.
+---
+include:
+  - board: nice_nano_v2
+    shield: settings_reset
+  - board: nice_nano_v2
+    shield: tester_pro_micro
+  - board: nice_nano_v2
+    shield: tcherta_left
+  - board: nice_nano_v2
+    shield: tcherta_right
