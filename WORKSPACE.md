@@ -3,6 +3,30 @@
 This document describes the local keyboard configuration layered on top of the
 inherited urob ZMK workspace.
 
+## Local Paths
+
+The workspace checkout is `~/orodruin/zmk`. Paths elsewhere in this document
+are relative to that directory. The GitHub repository is still named
+`littorio/zmk-workspace`; the local directory name does not need to match it.
+
+```text
+~/orodruin/
+├── langedaemon/                     # Separate macOS language-switching daemon
+└── zmk/                            # This workspace repository
+    ├── config/
+    ├── modules/zmk/
+    │   ├── zmk-keyboard-tcherta/    # Physical shields, selected by branch
+    │   └── zmk-orbita-layout/       # Shared layout on main
+    ├── zephyr/
+    └── zmk/                        # Upstream ZMK firmware repository
+```
+
+`.envrc` explicitly sets `zmk` to `$HOME/orodruin/zmk` and derives the `orbita`,
+`tcherta`, and `plenka` aliases from it. The Justfile and sealing helpers resolve
+the workspace from their own locations. If the workspace moves again, update
+`.envrc`, approve direnv at the new location, recreate build caches, and refresh
+Zephyr's CMake registration with `west zephyr-export`.
+
 ## Modules
 
 - `modules/zmk/zmk-keyboard-tcherta` contains physical keyboard shield

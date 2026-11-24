@@ -1,8 +1,9 @@
 # ZMK Workspace
 
 This workspace includes the inherited urob configuration below and local
-Tcherta/Orbita extensions. See [WORKSPACE.md](WORKSPACE.md) for the current
-module topology, supported keyboards, build targets, and sealing workflow.
+Tcherta/Plenka/Orbita extensions. The local checkout is `~/orodruin/zmk`.
+See [WORKSPACE.md](WORKSPACE.md) for the current directory layout, keyboard
+branches, build targets, and sealing workflow.
 
 # urob's zmk-config
 
@@ -298,19 +299,18 @@ environment is _completely isolated_ and won't pollute your system.
 
 #### Set up the workspace
 
-1. Clone _your fork_ of this repository. I like to name my local clone
-   `zmk-workspace` as it will be the toplevel of the development environment.
+1. Clone the workspace repository into its local location, `~/orodruin/zmk`.
 
    ```bash
-   # Replace `urob` with your username
-   git clone https://github.com/urob/zmk-config zmk-workspace
+   mkdir -p ~/orodruin
+   git clone https://github.com/littorio/zmk-workspace ~/orodruin/zmk
    ```
 
 2. Enter the workspace and set up the environment.
 
    ```bash
    # The first time you enter the workspace, you will be prompted to allow direnv
-   cd zmk-workspace
+   cd ~/orodruin/zmk
 
    # Allow direnv for the workspace, which will set up the environment (this takes a while)
    direnv allow
@@ -325,7 +325,7 @@ environment is _completely isolated_ and won't pollute your system.
 After following the steps above your workspace should look like this:
 
 ```
-zmk-workspace
+~/orodruin/zmk
 ├── config
 ├── firmware (created after building)
 ├── modules
@@ -335,18 +335,17 @@ zmk-workspace
 
 #### Building the firmware
 
-To build the firmware, simply type `just build all` from anywhere in the
-workspace. This will parse `build.yaml` and build the firmware for all board and
-shield combinations listed there.
+Use `just build tcherta` or `just build plenka` from anywhere in the workspace,
+with the matching keyboard-module branch checked out. See
+[WORKSPACE.md](WORKSPACE.md#supported-targets) for branch selection.
 
-To only build the firmware for a specific target, use `just build <target>`.
-This will build the firmware for all matching board and shield combinations. For
-instance, to build the firmware for my Corneish Zen, I can type
-`just build zen`, which builds both `corneish_zen_v2_left` and
-`corneish_zen_v2_right`. (`just list` shows all valid build targets.)
+The recipe parses `build.yaml` and builds all matching board and shield
+combinations, including both halves of the selected keyboard. `just list` shows
+the local target catalog. Avoid `just build all`: the two keyboard shields live
+on separate branches and are not available simultaneously.
 
 Additional arguments to `just build` are passed on to `west`. For instance, a
-pristine build can be triggered with `just build all -p`.
+pristine Tcherta build can be triggered with `just build tcherta -p always`.
 
 (For this particular example, there is also a `just clean` recipe, which clears
 the build cache. To list all available recipes, type `just`. Bonus tip: `just`
